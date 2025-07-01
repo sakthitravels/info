@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakthi Travels</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links a {
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('hero.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+        .hero .cta-buttons a {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .hero .cta-buttons a:hover {
+            background-color: #e65c00;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        section h2 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .service-card {
+            flex: 1 1 250px;
+            background: #e6f0ff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Contact Buttons */
+        .contact-buttons a {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px 10px 0 0;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+        }
+        .contact-buttons .call-btn {
+            background-color: #28a745;
+        }
+        .contact-buttons .whatsapp-btn {
+            background-color: #25d366;
+        }
+
+        /* Animation on Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div><strong>Sakthi Travels</strong></div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Your Trusted Travels Service in Tamil Nadu</h1>
+    <p>Outstation Trips | Local Rides | Family Tours | Best Price Guaranteed</p>
+    <div class="cta-buttons">
+        <a href="#" onclick="document.getElementById('callOptions').style.display='block'; return false;" style="display:inline-block; padding:10px 20px; background:#28a745; color:white; border-radius:5px; text-decoration:none;">📞 Call Now</a>
+
+<div id="callOptions" style="display:none; margin-top:10px;">
+    <a href="tel:9489525555" style="display:inline-block; padding:8px 15px; margin:5px; background:#007BFF; color:white; text-decoration:none; border-radius:5px;">📞 Call 9489525555</a>
+    <a href="tel:9600332322" style="display:inline-block; padding:8px 15px; margin:5px; background:#17a2b8; color:white; text-decoration:none; border-radius:5px;">📞 Call 9600332322</a>
+</div>
+
+
+        <a href="https://wa.me/9489525555">WhatsApp Us</a>
+    </div>
+</section>
+
+<section id="about" class="fade-in" style="opacity: 0; transform: translateY(50px); transition: opacity 1s ease, transform 1s ease;">
+    <h2>About Us</h2>
+    <p>Welcome to <strong>Sakthi Travels</strong> – your trusted travel partner for all your journey needs across Tamil Nadu and South India. We specialize in providing clean, spacious, and well-maintained cars and vans for family trips, corporate travel, tourist sightseeing, and special events.</p>
+    <p>Our experienced and courteous drivers ensure a safe, smooth, and on-time travel experience. Whether it’s a weekend getaway, a business meeting, or a long-distance tour, we are here to make your journey stress-free and enjoyable.</p>
+    <p><strong>Why Choose Us?</strong></p>
+    <ul>
+        <li>✔️ Comfortable & Air-Conditioned Vehicles</li>
+        <li>✔️ Professional & Friendly Drivers</li>
+        <li>✔️ Affordable Pricing with No Hidden Charges</li>
+        <li>✔️ On-Time Pick-up & Drop Services</li>
+        <li>✔️ Customizable Travel Packages</li>
+    </ul>
+    <p>Plan your next trip with us and experience hassle-free travel like never before.  
+    <br><strong>For bookings and inquiries, call us today!</strong></p>
+</section>
+
+<script>
+// Simple fade-in and slide-up animation when section comes into view
+document.addEventListener("DOMContentLoaded", function() {
+    const aboutSection = document.getElementById("about");
+    function revealSection() {
+        const sectionTop = aboutSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (sectionTop < windowHeight - 100) {
+            aboutSection.style.opacity = 1;
+            aboutSection.style.transform = "translateY(0)";
+            window.removeEventListener("scroll", revealSection);
+        }
+    }
+    window.addEventListener("scroll", revealSection);
+    revealSection(); // Trigger if already in view
+});
+</script>
+
+
+
+<section id="services" class="fade-in" style="padding: 40px 20px; background-color: #f9f9f9; text-align: center;">
+    <h2 style="font-size: 2.5em; color: #333; margin-bottom: 20px;">Our Services</h2>
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+        
+        <div class="service-card" style="background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+            <h3 style="color: #007BFF;">Outstation Trips</h3>
+            <p>Enjoy budget-friendly, safe, and comfortable long-distance journeys to popular cities and tourist destinations across Tamil Nadu and beyond.</p>
+        </div>
+
+        <div class="service-card" style="background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+            <h3 style="color: #28A745;">Local City Tours</h3>
+            <p>Discover the beauty of Madurai with our flexible hourly and full-day tour packages, perfect for sightseeing and local attractions.</p>
+        </div>
+
+        <div class="service-card" style="background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+            <h3 style="color: #FFC107;">Family & Group Travel</h3>
+            <p>Travel together with comfort! Our spacious vans are ideal for families and large groups looking for a fun and relaxed journey.</p>
+        </div>
+
+        <div class="service-card" style="background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+            <h3 style="color: #DC3545;">Airport Pickup & Drop</h3>
+            <p>Reliable and on-time transport to and from Madurai Airport. Never miss a flight or wait for a cab again!</p>
+        </div>
+    </div>
+</section>
+
+<script>
+// Add hover animation effect on service cards
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll(".service-card");
+    cards.forEach(function(card) {
+        card.addEventListener("mouseover", function() {
+            card.style.transform = "translateY(-10px)";
+            card.style.boxShadow = "0 8px 20px rgba(0,0,0,0.2)";
+        });
+        card.addEventListener("mouseout", function() {
+            card.style.transform = "translateY(0)";
+            card.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
+        });
+    });
+});
+</script>
+
+
+<section id="gallery" class="fade-in" style="padding: 40px 20px; background-color: #ffffff; text-align: center;">
+    <h2 style="font-size: 2.5em; color: #333; margin-bottom: 20px;">Gallery</h2>
+    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto;">
+        
+        <div style="overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; background: #fefefe;">
+            <img src="van.png" alt="Van Exterior" style="width: 100%; height: auto; transition: transform 0.5s;">
+            <p style="padding: 10px; color: #555; font-weight: 500;">Reliable and Spacious Mahindra Van – Equipped with Comfortable Seating and Ample Luggage Space. Perfect Choice for Family Trips, Pilgrimages, and Group Tours Across Tamil Nadu and South India.</p>
+        </div>
+
+        <div style="overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; background: #fefefe;">
+            <img src="toyoto.jpg" alt="Van Exterior" style="width: 100%; height: auto; transition: transform 0.5s;">
+            <p style="padding: 10px; color: #555; font-weight: 500;">Compact and Comfortable Toyota 4-Seater – Ideal for Small Family Trips, Business Travel, and City Tours. Enjoy Smooth Rides, Air-Conditioned Interiors, and Hassle-Free Travel Across Tamil Nadu and South India.</p>
+        </div>
+
+        <div style="overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; background: #fefefe;">
+            <img src="mahindra-xylo.jpg" alt="Car Service" style="width: 100%; height: auto; transition: transform 0.5s;">
+            <p style="padding: 10px; color: #555; font-weight: 500;">Clean and Comfortable Car – Ideal for City Rides, Business Travel, and Local Sightseeing. Features Air Conditioning, Smooth Seating, and Professional Chauffeur Service for a Relaxed and Safe Journey Around Madurai and Nearby Areas.</p>
+        </div>
+
+        <div style="overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; background: #fefefe;">
+            <img src="auto.jpg" alt="Auto Ride" style="width: 100%; height: auto; transition: transform 0.5s;">
+            <p style="padding: 10px; color: #555; font-weight: 500;">Efficient Tata Ace Goods Carrier – Perfect for Luggage Transport, Small Cargo, and Commercial Deliveries. With Ample Loading Space and Compact Design, It Ensures Safe and Timely Transport of Goods Across Thoothukudi and Nearby Areas.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+// Hover Zoom effect for gallery images
+document.addEventListener("DOMContentLoaded", function() {
+    const galleryImages = document.querySelectorAll("#gallery img");
+    galleryImages.forEach(function(img) {
+        img.addEventListener("mouseover", function() {
+            img.style.transform = "scale(1.1)";
+        });
+        img.addEventListener("mouseout", function() {
+            img.style.transform = "scale(1)";
+        });
+    });
+
+    // Scroll fade-in for gallery section
+    const gallerySection = document.getElementById("gallery");
+    function revealGallery() {
+        const sectionTop = gallerySection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (sectionTop < windowHeight - 100) {
+            gallerySection.style.opacity = 1;
+            gallerySection.style.transform = "translateY(0)";
+            window.removeEventListener("scroll", revealGallery);
+        }
+    }
+    gallerySection.style.opacity = 0;
+    gallerySection.style.transform = "translateY(50px)";
+    gallerySection.style.transition = "opacity 1s ease, transform 1s ease";
+    window.addEventListener("scroll", revealGallery);
+    revealGallery(); // Trigger if already visible
+});
+</script>
+<section id="achievements" class="fade-in" style="padding: 40px 20px; background-color: #ffffff; text-align: center;">
+    <h2 style="font-size: 2.5em; color: #333; margin-bottom: 30px;">Our Achievements</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h3 style="color: #28a745; font-size: 2em; margin-bottom: 10px;">5000+</h3>
+            <p style="color: #555; font-weight: 500;">Happy Customers Served</p>
+        </div>
+
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h3 style="color: #007BFF; font-size: 2em; margin-bottom: 10px;">20+ Years</h3>
+            <p style="color: #555; font-weight: 500;">Experience in Travel Services</p>
+        </div>
+
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h3 style="color: #FFC107; font-size: 2em; margin-bottom: 10px;">100+ Places</h3>
+            <p style="color: #555; font-weight: 500;">Covered Across Tamil Nadu & South India</p>
+        </div>
+
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <h3 style="color: #17a2b8; font-size: 2em; margin-bottom: 10px;">24/7</h3>
+            <p style="color: #555; font-weight: 500;">Customer Support Available</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="contact" class="fade-in" style="padding: 40px 20px; background-color: #f8f9fa; text-align: center;">
+    <h2 style="font-size: 2.5em; color: #333; margin-bottom: 20px;">Contact Us</h2>
+
+    <p style="font-size: 1.2em; color: #555; margin: 10px 0;">
+        📞 Phone 1: <a href="tel:1234567890" style="color: #007BFF; text-decoration: none;">1234567890</a>
+    </p>
+    <p style="font-size: 1.2em; color: #555; margin: 10px 0;">
+        📞 Phone 2: <a href="tel:9600332322" style="color: #007BFF; text-decoration: none;">9600332322</a>
+    </p>
+    <p style="font-size: 1.2em; color: #555; margin: 10px 0;">
+        📱 WhatsApp: <a href="https://wa.me/1234567890" target="_blank" style="color: #25D366; text-decoration: none;">Chat on WhatsApp</a>
+    </p>
+    <p style="font-size: 1.2em; color: #555; margin: 10px 0;">
+        📍 Location: <strong>Thoothukudi, Tamil Nadu</strong>
+    </p>
+
+    <div class="contact-buttons" style="margin-top: 20px; position: relative; display: inline-block;">
+        <button onclick="toggleDropdown()" style="padding: 12px 25px; margin: 10px; background-color: #28a745; color: #fff; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+            📞 Call Now
+        </button>
+
+        <a href="https://wa.me/9489525555" target="_blank" style="display: inline-block; padding: 12px 25px; margin: 10px; background-color: #25D366; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            💬 WhatsApp Us
+        </a>
+
+        <!-- Dropdown box for numbers -->
+        <div id="callDropdown" style="display: none; position: absolute; left: 0; right: 0; top: 60px; background-color: #ffffff; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); border-radius: 5px; z-index: 1;">
+            <a href="tel:9489525555" style="display: block; padding: 10px; color: #007BFF; text-decoration: none; border-bottom: 1px solid #ddd;">📞 Call 9489525555</a>
+            <a href="tel:9600332322" style="display: block; padding: 10px; color: #17a2b8; text-decoration: none;">📞 Call 9600332322</a>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleDropdown() {
+    var dropdown = document.getElementById("callDropdown");
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+}
+</script>
+
+<section>
+    <div style="margin-top: 30px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 100%; height: 400px; position: relative;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7887.219414708528!2d78.11706368929006!3d8.728559619903574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b03edfb2b33e51b%3A0xa34f40602956d566!2sM.Saveriyar%20Puram%2C%20HWP%20Colony%2C%20Mullakadu%2C%20Thoothukudi%2C%20Tamil%20Nadu%20628005!5e0!3m2!1sen!2sin!4v1751287631206!5m2!1sen!2sin" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+
+
+
+
+ 
+    
+
+
+
+
+
+<footer>
+    <p>© Sakthi Travels | Designed For Travels/p>
+</footer>
+
+<script>
+    // Simple Scroll Animation
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
